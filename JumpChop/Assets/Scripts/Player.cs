@@ -7,16 +7,18 @@ public class Player : MonoBehaviour
 	[SerializeField] private Transform groundCheckTransform = null;
 	[SerializeField] private LayerMask playerMask;
 	[SerializeField] private Rigidbody2D rb;
-	
-	bool jumpKey = false;
+	[SerializeField] private Inventory bag;
+
+	bool jumpKey;
 	float horizontalInput;
-	Collider2D activeTree = null;
+	Collider2D activeDestructable;
 	
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+		jumpKey = false;
+		activeDestructable = null;
+	}
 
     // Update is called once per frame
     void Update()
@@ -30,10 +32,11 @@ public class Player : MonoBehaviour
 		// Check if E is pressed
 		if (Input.GetKeyDown (KeyCode.E))
 		{
-			if (activeTree != null)
+			if (activeDestructable != null)
 			{
-				Destroy (activeTree.gameObject);
-				activeTree = null;
+				Destroy(activeDestructable.gameObject);
+				activeDestructable = null;
+				bag.numWood++;
 			}
 		}
 		
@@ -64,7 +67,7 @@ public class Player : MonoBehaviour
 		// Tree Layer is 7 pog
 		if (collision.gameObject.layer == 7)
 		{
-			activeTree = collision;
+			activeDestructable = collision;
 		}
 	}
 	
@@ -73,7 +76,7 @@ public class Player : MonoBehaviour
 		// Tree Layer is 7 pog
 		if (collision.gameObject.layer == 7)
 		{
-			activeTree = null;
+			activeDestructable = null;
 		}
 	}
 }
