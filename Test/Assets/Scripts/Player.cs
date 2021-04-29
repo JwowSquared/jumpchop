@@ -7,8 +7,7 @@ public class Player : MonoBehaviour
 	[SerializeField] private Transform groundCheckTransform = null;
 	[SerializeField] private LayerMask playerMask;
 	[SerializeField] private Rigidbody2D rb;
-	[SerializeField] private Inventory bag;
-
+	
 	bool jumpKey = false;
 	float horizontalInput;
 	Collider2D activeTree = null;
@@ -16,9 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		
-
-	}
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,8 +34,6 @@ public class Player : MonoBehaviour
 			{
 				Destroy (activeTree.gameObject);
 				activeTree = null;
-				bag.numWood++;
-				Debug.Log("Wood Count = " + bag.numWood);
 			}
 		}
 		
