@@ -336,7 +336,7 @@ Transform:
   - {fileID: 1163806012}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!50 &396766072
 Rigidbody2D:
@@ -402,7 +402,51 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   rb: {fileID: 396766072}
-  bag: {fileID: 1603618332}
+--- !u!1 &431408957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431408959}
+  - component: {fileID: 431408958}
+  m_Layer: 6
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &431408958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431408957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f3b041f6c5f7240b0503d4df414bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodDisplay: {fileID: 1603618330}
+  timerDisplay: {fileID: 694340437}
+--- !u!4 &431408959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431408957}
+  m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -5.63, y: 0.6896248, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &434114188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207759379894818327, guid: 884b82157b331b54f874140d67a79405, type: 3}
@@ -507,9 +551,8 @@ GameObject:
   - component: {fileID: 694340436}
   - component: {fileID: 694340438}
   - component: {fileID: 694340437}
-  - component: {fileID: 694340439}
   m_Layer: 5
-  m_Name: Text
+  m_Name: timerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,19 +619,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694340435}
   m_CullTransparentMesh: 1
---- !u!114 &694340439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694340435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef70162ed6bfe2a4eae850a1ff5053bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
 --- !u!1 &700092054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8611593542953101879, guid: 6f90c607726558c448bbbb39e3b18862, type: 3}
@@ -806,7 +836,7 @@ RectTransform:
   - {fileID: 1603618329}
   - {fileID: 694340436}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -824,9 +854,8 @@ GameObject:
   - component: {fileID: 1603618329}
   - component: {fileID: 1603618331}
   - component: {fileID: 1603618330}
-  - component: {fileID: 1603618332}
   m_Layer: 5
-  m_Name: Text
+  m_Name: woodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,19 +922,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603618328}
   m_CullTransparentMesh: 1
---- !u!114 &1603618332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603618328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb18b2d4e8814c489868903fbb0c694, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numWood: 0
 --- !u!1001 &1792013848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1033,7 +1049,7 @@ Transform:
   - {fileID: 700092055}
   - {fileID: 1904018331}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2289602597431656539
 PrefabInstance:

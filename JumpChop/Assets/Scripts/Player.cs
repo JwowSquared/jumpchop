@@ -7,12 +7,11 @@ public class Player : MonoBehaviour
 	[SerializeField] private Transform groundCheckTransform = null;
 	[SerializeField] private LayerMask playerMask;
 	[SerializeField] private Rigidbody2D rb;
-	[SerializeField] private Inventory bag;
 
 	bool jumpKey;
 	float horizontalInput;
 	Collider2D activeDestructable;
-	
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +35,7 @@ public class Player : MonoBehaviour
 			{
 				Destroy(activeDestructable.gameObject);
 				activeDestructable = null;
-				bag.numWood++;
+				GameController.instance.addWood(1);
 			}
 		}
 		
